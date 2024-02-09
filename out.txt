@@ -1,0 +1,8 @@
+
+
+
+R1if v>0:
+R1R1R1R1 print(int((v*t)%s))
+
+
+R1R1R1R1 print(int(108-(abs(v)*t)%s))
