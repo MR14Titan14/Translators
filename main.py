@@ -1,7 +1,7 @@
 W=dict([('import','W1'),('as','W2'),('input','W3'),('print','W4'),('open','W5'),('if','W6'),('else','W7'),('then','W8'),('while','W9'),('for','W10'),('in','W11'),
         ('int','W12'),('float','W13'),('abs','W14')])
 I=dict()
-R=dict([(':','R1'),('(','R2'),(')','R3'),('[','R4'),(']','R5'),(';','R6')])
+R=dict([(':','R1'),('(','R2'),(')','R3'),('[','R4'),(']','R5'),(';','R6'),('#','R7')])
 O=dict([('=','O1'),('+','O2'),('-','O3'),('+=','O4'),('-=','O5'),('--','O6'),('++','O7'),('==','O8'),('>=','O9'),('<=','O10'),('.','O11'),('*','O12'),('%','O13'),('>','O14')])
 N=dict()
 S=dict()
@@ -26,13 +26,17 @@ while l!="":
         st='R0 '*t
     l=inf.readline()
 
-
+    ts=''
+    if(s.find('#')!=-1):
+        ts=s[s.find('#')+1:]
+        s=s[:s.find('#')+1]
     for key in R:
         s=s.replace(key,f' {key} ')
     for key in O:
         s=s.replace(key,f' {key} ')
 
     s=s.rstrip()
+    ts=ts.rstrip()
     s=s.split(' ')
     for word in s:
         if word!='':
@@ -69,7 +73,36 @@ while l!="":
                 I[f'{word}'] = f'I{ni}'
                 ni += 1
                 st+=I.get(word)+' '
+    st+=ts
     ouf.write(st+'\n')
-
 inf.close()
 ouf.close()
+file = open('S.txt', 'w')
+for key, value in S.items():
+	file.write(f'{key}, {value}\n')
+file.close()
+
+file = open('R.txt', 'w')
+for key, value in R.items():
+	file.write(f'{key}, {value}\n')
+file.close()
+
+file = open('O.txt', 'w')
+for key, value in O.items():
+	file.write(f'{key}, {value}\n')
+file.close()
+
+file = open('N.txt', 'w')
+for key, value in N.items():
+	file.write(f'{key}, {value}\n')
+file.close()
+
+file = open('W.txt', 'w')
+for key, value in W.items():
+	file.write(f'{key}, {value}\n')
+file.close()
+
+file = open('I.txt', 'w')
+for key, value in I.items():
+	file.write(f'{key}, {value}\n')
+file.close()

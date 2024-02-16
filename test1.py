@@ -1,5 +1,6 @@
 import numpy as np
-v=float(input())
+#Comment first
+v=float(input()) #Comment
 t=int(input())
 s=108
 if v>0:

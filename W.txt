@@ -1,0 +1,14 @@
+import, W1
+as, W2
+input, W3
+print, W4
+open, W5
+if, W6
+else, W7
+then, W8
+while, W9
+for, W10
+in, W11
+int, W12
+float, W13
+abs, W14

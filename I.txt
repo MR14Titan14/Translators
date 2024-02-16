@@ -1,0 +1,6 @@
+numpy, I1
+np, I2
+v, I3
+t, I4
+s, I6
+pras, I8
